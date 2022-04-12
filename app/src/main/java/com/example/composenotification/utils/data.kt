@@ -16,7 +16,7 @@ class Repository {
     fun getresultapi(page: Int, pagesize: Int): Result<List<ItemsList>> {
         val startindex = page * pagesize
         return if (startindex + pagesize <= items.size) {
-            Result.success(items)
+            Result.success(items.slice(startindex until startindex+pagesize))
         } else {
             Result.success(emptyList())
         }
