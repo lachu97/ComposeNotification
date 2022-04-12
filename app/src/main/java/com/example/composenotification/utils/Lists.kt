@@ -1,5 +1,6 @@
 package com.example.composenotification.utils
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,6 +28,8 @@ fun Lists(list: List<ItemsList>) {
                 Text(text = item.number.toString())
                 Divider()
             }
+            val bool=state.firstVisibleItemIndex == list.size -1
+            Log.i("Val","Bool = ${bool}")
         }
     }
 }
